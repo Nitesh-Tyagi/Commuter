@@ -1,0 +1,133 @@
+/* 
+Light Green - #d9d7c2
+Dark Green - #948d71
+Dark Pink - #f7a49e
+Light Pink - #f7c6c2
+Cream - #fceeed 
+*/
+
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto-Light.ttf);
+}
+
+body {
+    margin: 0px;
+	padding: 0px;
+	font-family: Roboto;
+
+    /* background-color: #F2F2F2; */
+    background-image: url(body_bg.svg);
+    background-size: auto auto;
+
+    text-align: center;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* padding: 10px 20vw; */
+
+    color: #F2F2F2;
+}
+
+body > * {
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+
+    border-radius: 4px;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.45));
+}
+
+#top {
+    height: 60px;
+    width: 340px;
+    background-image: url(top_bg.svg);
+
+    margin: 20px 0px;
+    display: flex;
+	justify-content: space-between;
+    color: #5E76BF;
+
+    font-weight: 600;
+    font-size: 20px;
+
+    border-radius: 30px;
+    
+}
+
+#top > * {
+    margin: 16px 24px;
+}
+
+#top .left {
+    color: #F2F2F2;
+}
+#top .right {
+    display: inline-block;
+}
+
+#top .right #budget {
+    color: #2C3140;
+}
+
+#hero {
+    height: 140px;
+    width: 340px;
+    /* background-color: #B8BABF; */
+    background-image: url(hero_bg.svg);
+
+    margin: 100px 0px;
+}
+
+#calendar {
+    height: 330px;
+    width: 340px;
+
+    /* background-color: #2C3140; */
+    background-image: url(calendar_bg.svg);
+
+    margin-top: 260px;
+}
+
+#heading {
+    display: flex;
+	justify-content: space-between;
+    margin: 10px 10px 6px 10px;
+    padding: 10px 0px;
+
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.day {
+	font-weight: 600;
+    color: #F2F2F2;
+}
+
+.grid {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+    margin: 0px 9px;
+    padding: 0px 0px;
+}
+
+.col > * {
+    margin: 12px 0px;
+}
+
+.old {
+    color: #B8BABF;
+}
+
+.active {
+    border-radius: 2px;
+    background-color: #F26B83;
+    box-shadow: 0px 0px 0px 6px #F26B83;
+    /* padding: 8px; */
+}
