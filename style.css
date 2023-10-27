@@ -79,6 +79,51 @@ body > * {
     background-image: url(hero_bg.svg);
 
     margin: 100px 0px;
+    
+    display: flex;
+	justify-content: space-between;
+}
+
+#hero .right {
+    margin: 13px 0px 0px 0px;
+}
+
+#hero .tag {
+    height: 34px;
+    width: 84px;
+
+    /* background-color: #2C3140; */
+    background-image: url(tag_default.svg);
+    border-radius: 11px;
+    /* opacity: 0.5; */
+    margin: 0px 13px 6px 0px;
+}
+#hero .tag_logo {
+    font-size: 12px;
+    background-color: #F26B83;
+    border-radius: 50px;
+    box-shadow: 0px 1px 0px 3px #F26B83;
+    margin: 8px 0px 0px 10px;
+    position: absolute;
+    width: 16px;
+}
+
+#hero .tag_price {
+    font-size: 20;
+    font-weight: 600;
+    color: #F26B83;
+    position: absolute;
+    margin: 8px 0px 0px 40px;
+}
+#hero .tag1 {
+    height: 34px;
+    width: 84px;
+
+    background-color: #FB9FAF;
+    /* background-image: url(tag_default.svg); */
+    border-radius: 11px;
+    /* opacity: 0.5; */
+    margin: 0px 13px 6px 0px;
 }
 
 #calendar {
