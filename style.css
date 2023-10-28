@@ -76,13 +76,14 @@ body > * {
     height: 140px;
     width: 340px;
     /* background-color: #B8BABF; */
-    background-image: url(hero_bg.svg);
+    background-image: url(hero_bg1.svg);
 
     margin: 100px 0px;
     
     display: flex;
 	justify-content: space-between;
-	border-radius: 20px;
+
+    border-radius: 20px;
 }
 
 #hero .right {
