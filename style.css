@@ -417,17 +417,19 @@ body > * {
     opacity: 0.4;
 }
 
+.dot {
+    font-weight: 600;
+    color:#DA6C78;
+}
+
 .active {
     border-radius: 2px;
     background-color: #c64453;
     box-shadow: 0px 0px 0px 6px #c64453;
     color: #2C3140;
+    font-weight: 900;
     /* box-shadow: 0px 12px 0px -8px #c64453; */
     /* width: 24px; */
     /* padding: 8px; */
 }
 
-.dot {
-    font-weight: 600;
-    color:#DA6C78;
-}
