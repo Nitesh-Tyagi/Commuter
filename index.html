@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div id="pageBackground"></div>
     <div id="top">
         <svg id="top_bg" width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_45_393)">
@@ -24,10 +25,10 @@
             
             
         <div class="left">Garveeta</div>
-        <!-- <div class="right">
+        <div class="right">
             <span>2805</span> 
             <span id="budget">/ 3400</span>
-        </div> -->
+        </div>
         <div id="leftExpand">
             <div class="tag1">
                 <div class="tag_logo">🛺</div>
@@ -49,9 +50,28 @@
                 <div class="label">Budget</div>
                 <input type="text" placeholder="Budget" class="text">
             </div>
+            <div class="sliderBox">
+                <div id="slider"></div>
+            </div>
         </div>
     </div>
     <div id="hero">
+        <svg id="hero_bg" width="340" height="140" viewBox="0 0 340 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_42_330)">
+                <rect width="340" height="140" fill="#F0C4C9"/>
+                <circle cx="244" cy="166" r="125" fill="#EFA5AD"/>
+                <circle id="rightOuter" cx="404" cy="78" r="200" fill="#DA6C78"/>
+                <ellipse id="outerCircle" cx="19.6817" cy="50.9279" rx="158" ry="150" transform="rotate(41.1794 19.6817 50.9279)" fill="#DA6C78"/>
+                <circle id="innerCircle" cx="5" cy="78" r="150" fill="#C64453"/>
+                <circle id="rightInner" cx="340" cy="78" r="125" fill="#C64453"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_42_330">
+                    <rect width="340" height="140" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+            
         <div class="left">
             <div id="cur_date">15 January</div>
             <div id="budget">₹ 3700</div>
@@ -106,7 +126,7 @@
                 </div>
                 <div class="col">
                     <span class="day">FRI</span>
-                    <span>01</span>
+                    <span class="dot">01</span>
                     <span>08</span>
                     <span>15</span>
                     <span>22</span>
@@ -133,7 +153,32 @@
 
     </div>
 
-
-	<script src="index.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDuz7dQh-Ah-nmG7BC9rUTh_FiBkERG3uM",
+          authDomain: "commuter-web.firebaseapp.com",
+          projectId: "commuter-web",
+          storageBucket: "commuter-web.appspot.com",
+          messagingSenderId: "38137506695",
+          appId: "1:38137506695:web:873fc517747eab87350122",
+          measurementId: "G-KMCHFE7BCN"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+	<script type="module" src="index.js"></script>
+    <script type="module" src="animations.js"></script>
+    <script type="module" src="calendar.js"></script>
+    <script type="module" src="top.js"></script>
   </body>
 </html>
