@@ -1,5 +1,6 @@
 import { animateTop, animateHero } from '/animations.js';
 import { fillCalendar, fillHeading, setActive, setInactive } from '/calendar.js';
+import { addTagEventListeners } from '/top.js';
 
 // const body = document.querySelector('body');
 // const topElement = document.getElementById("top");
@@ -27,6 +28,16 @@ document.getElementById("top_bg").addEventListener('click', animateTop);
 // attachHeroEventListeners();
 document.getElementById("hero_bg").getElementById("innerCircle").addEventListener('click', animateHero);
 document.getElementById("hero_bg").getElementById("outerCircle").addEventListener('click', animateHero);
+
+// const leftExpand = document.getElementById("leftExpand");
+// if (leftExpand) {
+//     const tags = leftExpand.querySelectorAll(".tag");
+//     for (let i = 0; i < tags.length; i++) {
+//         tags[i].addEventListener("click", addTag);
+//     }
+// }
+
+addTagEventListeners();
 
 // --------------------------------------------------------------------------------------------------------------------
 

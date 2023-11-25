@@ -118,7 +118,7 @@ body > * {
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.15);
 }
 
-#top .tag_logo {
+#top .tag_logo1 {
     font-size: 12px;
     background-color: #5E76BF;
     border-radius: 50px;
@@ -127,15 +127,60 @@ body > * {
     position: absolute;
     width: 16px;
 
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.45);
+    /* text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.45); */
 }
 
-#top .tag_price {
+#top .tag_logo {
+    font-size: 15px;
+    background-color: #5e76bf00;
+    border-radius: 50px;
+    box-shadow: 0px 1.5px 0px 4px #5e76bf00;
+    margin: 5px 0px 0px -60px;
+    position: absolute;
+    width: 20px;
+
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.45);
+
+    border: none;
+}
+
+#top .tag_logo::placeholder {
+    color: #2C3140;
+}
+
+#top .tag_logo:focus {
+    outline: none;
+}
+
+#top .tag_price1 {
     font-size: 20;
     font-weight: 900;
     color: #2C3140;
     position: absolute;
-    margin: 5px 0px 0px 46px;
+    margin: 5px 0px 0px 36px;
+}
+
+#top .tag_price {
+    height: 34px;
+    width: 58px;
+
+    background-color: #1e4acd00;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2C3140;
+    position: absolute;
+    margin: 0px 0px 0px -16px;
+    padding: 0px;
+
+    border: none;
+}
+
+#top .tag_price::placeholder {
+    color: #2C3140;
+}
+
+#top .tag_price:focus {
+    outline: none;
 }
 
 #top #leftExpand {
@@ -359,6 +404,7 @@ body > * {
     position: absolute;
     margin: 8px 0px 0px 36px;
 }
+
 #hero .tag1 {
     height: 34px;
     width: 84px;

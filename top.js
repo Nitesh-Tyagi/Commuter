@@ -70,3 +70,90 @@ function endDrag(e) {
 
 document.addEventListener('mouseup', endDrag);
 document.addEventListener('touchend', endDrag);
+
+export function handleTag (event) {
+    let target = event.target;
+
+    if(target.className == 'tag') {
+        // Update the class
+        target.className = 'tag1';
+
+        // Create new elements
+        let divLogo = document.createElement('div');
+        divLogo.className = 'tag_logo1';
+        divLogo.innerText = '.';
+
+        let inputText = document.createElement('input');
+        inputText.type = 'text';
+        inputText.maxLength = '2';
+        inputText.placeholder = '';
+        inputText.className = 'tag_logo';
+
+        let divPrice = document.createElement('div');
+        divPrice.className = 'tag_price1';
+        divPrice.innerText = '₹';
+
+        let inputNumber = document.createElement('input');
+        inputNumber.type = 'number';
+        inputNumber.pattern = '[0-9]*';
+        inputNumber.maxLength = '5';
+        inputNumber.placeholder = 'XXXX';
+        inputNumber.className = 'tag_price';
+
+        // Append new elements to the target element
+        target.appendChild(divLogo);
+        target.appendChild(inputText);
+        target.appendChild(divPrice);
+        target.appendChild(inputNumber);
+    }
+    else if(target.className == 'tag1') {
+        while (target.firstChild) {
+            target.removeChild(target.firstChild);
+        }
+    
+        target.className = 'tag';
+    
+        console.log(target);
+    }
+} 
+
+export function addTagEventListeners () {
+    let tags = Array.from(document.getElementById("leftExpand").children).filter(child => child.tagName === 'DIV');
+    console.log(tags);
+    if (tags) {
+        for (let i = 0; i < tags.length; i++) {
+            // Apply CSS transition to each tag
+            tags[i].style.transition = 'background-color 1s';
+            tags[i].addEventListener('touchstart', handleTouchStart.bind(tags[i]), false);
+            tags[i].addEventListener('touchend', handleTouchEnd.bind(tags[i]), false);
+        }
+        
+        let touchStartTime;
+        
+        function handleTouchStart(event) {
+            // Check if the event target is this div
+            if (event.target !== this) return;
+            touchStartTime = Date.now();
+            // Start changing the background color to red
+            console.log('Touch started');
+            this.style.backgroundColor = '#c64453';
+        }
+        
+        function handleTouchEnd(event) {
+            // Check if the event target is this div
+            if (event.target !== this) return;
+            let touchDuration = Date.now() - touchStartTime;
+        
+            console.log('Touch ended. Duration:', touchDuration);
+            if (touchDuration < 500) {
+                // Reset the background color if the touch was less than 2 seconds
+                this.style.backgroundColor = ''; // Replace with original color if needed
+            }
+        
+            if (touchDuration >= 500) {
+                this.style.backgroundColor = '';
+                handleTag(event);
+            }
+        }        
+    }
+}

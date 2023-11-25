@@ -110,7 +110,7 @@ export function fillHeading (day) {
 
 export function setActive (event, day) {
     // Check if the clicked element is a span
-    if (event.target.tagName === 'SPAN' && !event.target.classList.contains("old")) {
+    if (event.target.tagName === 'SPAN' && !event.target.classList.contains("old") && !event.target.classList.contains("day")) {
         // Perform action here
         day.setDate(Number(event.target.innerText));
         
