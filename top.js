@@ -117,7 +117,7 @@ export function handleTag (event) {
     }
 } 
 
-export function addTagEventListeners () {
+export function addTopTagEventListeners () {
     let tags = Array.from(document.getElementById("leftExpand").children).filter(child => child.tagName === 'DIV');
     console.log(tags);
     if (tags) {

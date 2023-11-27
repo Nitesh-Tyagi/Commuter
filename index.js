@@ -1,6 +1,7 @@
 import { animateTop, animateHero } from '/animations.js';
 import { fillCalendar, fillHeading, setActive, setInactive } from '/calendar.js';
-import { addTagEventListeners } from '/top.js';
+import { addTopTagEventListeners } from '/top.js';
+import { addHeroTagEventListeners } from '/hero.js';
 
 // const body = document.querySelector('body');
 // const topElement = document.getElementById("top");
@@ -37,7 +38,8 @@ document.getElementById("hero_bg").getElementById("outerCircle").addEventListene
 //     }
 // }
 
-addTagEventListeners();
+addTopTagEventListeners();
+addHeroTagEventListeners();
 
 // --------------------------------------------------------------------------------------------------------------------
 
