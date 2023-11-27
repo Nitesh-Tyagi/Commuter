@@ -77,6 +77,7 @@ export function handleTag (event) {
     if(target.className == 'tag') {
         // Update the class
         target.className = 'tag1';
+        target.backgroundColor = '#A2B6F2';
 
         // Create new elements
         let divLogo = document.createElement('div');
@@ -105,6 +106,7 @@ export function handleTag (event) {
         target.appendChild(inputText);
         target.appendChild(divPrice);
         target.appendChild(inputNumber);
+
     }
     else if(target.className == 'tag1') {
         while (target.firstChild) {
@@ -123,7 +125,7 @@ export function addTopTagEventListeners () {
     if (tags) {
         for (let i = 0; i < tags.length; i++) {
             // Apply CSS transition to each tag
-            tags[i].style.transition = 'background-color 1s';
+            tags[i].style.transition = 'background-color 1s, box-shadow 0.8s';
             tags[i].addEventListener('touchstart', handleTouchStart.bind(tags[i]), false);
             tags[i].addEventListener('touchend', handleTouchEnd.bind(tags[i]), false);
         }
@@ -136,7 +138,9 @@ export function addTopTagEventListeners () {
             touchStartTime = Date.now();
             // Start changing the background color to red
             console.log('Touch started');
-            this.style.backgroundColor = '#c64453';
+            // this.style.backgroundColor = '#5E76BF';
+            if(this.className == 'tag') this.style.boxShadow = 'inset 0 0 30px 20px #5E76BF';
+            else this.style.backgroundColor = '#5E76BF';
         }
         
         function handleTouchEnd(event) {
@@ -148,10 +152,12 @@ export function addTopTagEventListeners () {
             if (touchDuration < 500) {
                 // Reset the background color if the touch was less than 2 seconds
                 this.style.backgroundColor = ''; // Replace with original color if needed
+                this.style.boxShadow = '';
             }
         
             if (touchDuration >= 500) {
                 this.style.backgroundColor = '';
+                this.style.boxShadow = '';
                 handleTag(event);
             }
         }        

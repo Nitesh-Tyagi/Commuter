@@ -111,6 +111,7 @@ body > * {
     width: 134px;
 
     background-color: #A2B6F2;
+    box-shadow: none;
     /* background-image: url(tag_default.svg); */
     border-radius: 20px;
     /* opacity: 0.5; */
