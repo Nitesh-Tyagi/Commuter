@@ -78,8 +78,12 @@ export function animateHero (event) {
     let rightOuter = heroSVG.getElementById("rightOuter");
 
     let rightTags = heroElement.getElementsByClassName("right");
-    let curDate = document.getElementById("cur_date");
+    let leftElements = heroElement.getElementsByClassName("left");
+    let tabs = heroElement.querySelector("#tabs");
+    let field = tabs.querySelectorAll(".field");
 
+    console.log("tabs :",tabs);
+    console.log("fields :",field);
     setTimeout( function () {
         if(innerCircle.getAttribute("r")==150){
             innerCircle.style.transition = '1.4s';
@@ -87,7 +91,18 @@ export function animateHero (event) {
             rightInner.style.transition = '1s';
             rightOuter.style.transition = '1s';
             rightTags[0].style.transition = '0.3s';
-            curDate.style.transition = '0.3s';
+            leftElements[0].style.transition = '0.3s';
+            field[0].style.transition = '1.4s';
+            field[1].style.transition = '1.2s';
+            field[2].style.transition = '1.0s';
+            tabs.style.transition = '1.6s';
+
+            setTimeout( function () {
+                field[0].style.transform = 'translateY(0px)';
+                field[1].style.transform = 'translateY(0px)';
+                field[2].style.transform = 'translateY(0px)';
+                tabs.style.transform = 'translateY(0px)';
+            },300);
 
             innerCircle.setAttribute("r","500");
             outerCircle.setAttribute("rx","500");
@@ -98,7 +113,8 @@ export function animateHero (event) {
 
             // rightTags[0].style.opacity = '0';
             rightTags[0].style.transform = 'translateX(100px)';
-            curDate.style.transform = 'translateX(-200px)';
+            leftElements[0].style.transform = 'translateX(-200px)';
+            
         }
         else {
             innerCircle.style.transition = '1.2s';
@@ -106,7 +122,11 @@ export function animateHero (event) {
             rightInner.style.transition = '1.4s';
             rightOuter.style.transition = '1.4s';
             rightTags[0].style.transition = '1s';
-            curDate.style.transition = '0.3s';
+            leftElements[0].style.transition = '0.3s';
+            field[0].style.transition = '0.2s';
+            field[1].style.transition = '0.8s';
+            field[2].style.transition = '1.2s';
+            tabs.style.transition = '1.2s';
 
             innerCircle.setAttribute("r","150");
             outerCircle.setAttribute("rx","158");
@@ -115,10 +135,15 @@ export function animateHero (event) {
             rightInner.setAttribute("r","125");
             rightOuter.setAttribute("r","200");
 
+            field[0].style.transform = 'translateY(-200px)';
+            field[1].style.transform = 'translateY(-200px)';
+            field[2].style.transform = 'translateY(-200px)';
+            tabs.style.transform = 'translateY(-200px)';
+
             setTimeout( function () {
                 // rightTags[0].style.opacity = '1';
                 rightTags[0].style.transform = 'translateX(0)';
-                curDate.style.transform = 'translateX(0)';
+                leftElements[0].style.transform = 'translateX(0)';
             },300);
         }
     },690);

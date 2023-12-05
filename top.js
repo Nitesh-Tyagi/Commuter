@@ -80,9 +80,9 @@ export function handleTag (event) {
         target.backgroundColor = '#A2B6F2';
 
         // Create new elements
-        let divLogo = document.createElement('div');
-        divLogo.className = 'tag_logo1';
-        divLogo.innerText = '.';
+        // let divLogo = document.createElement('div');
+        // divLogo.className = 'tag_logo1';
+        // divLogo.innerText = '.';
 
         let inputText = document.createElement('input');
         inputText.type = 'text';
@@ -102,7 +102,7 @@ export function handleTag (event) {
         inputNumber.className = 'tag_price';
 
         // Append new elements to the target element
-        target.appendChild(divLogo);
+        // target.appendChild(divLogo);
         target.appendChild(inputText);
         target.appendChild(divPrice);
         target.appendChild(inputNumber);

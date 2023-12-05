@@ -112,7 +112,7 @@ body > * {
 
     background-color: #A2B6F2;
     box-shadow: none;
-    /* background-image: url(tag_default.svg); */
+    background-image: url(top_tag1.svg);
     border-radius: 20px;
     /* opacity: 0.5; */
     margin: 0px 13px 6px 0px;
@@ -121,9 +121,9 @@ body > * {
 
 #top .tag_logo1 {
     font-size: 12px;
-    background-color: #5E76BF;
+    /* background-color: #5E76BF; */
     border-radius: 50px;
-    box-shadow: 0px 1.5px 0px 4px #5E76BF;
+    /* box-shadow: 0px 1.5px 0px 4px #5E76BF; */
     margin: 8px 0px 0px 11px;
     position: absolute;
     width: 16px;
@@ -136,7 +136,7 @@ body > * {
     background-color: #5e76bf00;
     border-radius: 50px;
     box-shadow: 0px 1.5px 0px 4px #5e76bf00;
-    margin: 5px 0px 0px -60px;
+    margin: 5px 0px 0px -61px;
     position: absolute;
     width: 20px;
 
@@ -317,7 +317,7 @@ body > * {
     height: 140px;
     width: 340px;
     background-color: #c64453;
-    /* background-image: url(hero_bg.svg); */
+    /* background-image: url(temp.svg); */
 
     margin: 100px 0px 0px 0px;
     
@@ -343,16 +343,75 @@ body > * {
     border-radius: 20px;
 }
 
+#tabs {
+    /* background-color: #5E76BF; */
+    opacity: 1;
+    height: 110px;
+    width: 300px;
+    position: absolute;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 20px 0px 20px;
+    padding: 8px 1px 0px 0px;
+
+    transform: translateY(-200px);
+}
+
+#tabs > * {
+    /* background-color: #DA6C78; */
+    background-image: url(field_bg.svg);
+    height: 40px;
+    width: 268px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 15px 0px 15px;
+
+    /* border-radius: 10px; */
+    transform: translateY(-200px);
+}
+
+#hero .field > * {
+    /* opacity: 0.7; */
+    /* background-color: #876cda; */
+    position: absolute;
+    /* background-color */
+    margin: 6px 0px;
+    color: #2C3140;
+    font-weight: 900;
+}
+
+#hero .field .logo {
+    top: -2px;
+    left: 9px;
+}
+#hero .field .price {
+    left: 40px;
+}
+#hero .field .number {
+    left: 140px;
+}
+#hero .field .amount {
+    left: 222px;
+}
+
+
 #hero .right {
     margin: 13px 0px 0px 0px;
 }
 
 #hero #cur_date {
+    /* background-color: #5E76BF; */
     font-family: Oregano;
     position: absolute;
     font-size: 24px;
     margin: 8px 0px 0px 18px;
 
+    width: 120px;
     color: #2C3140;
     text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.1);
 
