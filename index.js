@@ -1,51 +1,35 @@
+import { readConfig, getAll } from '/data.js';
 import { animateTop, animateHero } from '/animations.js';
 import { fillCalendar, fillHeading, setActive, setInactive } from '/calendar.js';
-import { addTopTagEventListeners } from '/top.js';
-import { addHeroTagEventListeners } from '/hero.js';
-
-// const body = document.querySelector('body');
-// const topElement = document.getElementById("top");
-// const heroElement = document.getElementById("hero");
-// const topSVG = document.getElementById("top_bg");
-// const leftExpand = document.getElementById("leftExpand");
-// const expand = document.getElementById("expand");
-// Get all the "col" elements
-// const cols = document.querySelectorAll('.col');
-// const heading = document.getElementById("heading");
-// let heroContent;
-// var topIsActive = 0;
-
-// const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-// const months = ["January","February","March","April","May","June","July","September","October","November","December"];
+import { addTopTagEventListeners, fillTop } from '/top.js';
+import { fillTabs, addHeroTagEventListeners } from '/hero.js';
 
 
-// topSVG.addEventListener('mousedown', animateTop(event));
-
+await readConfig(); // Call F to read ENV data from config data
+await getAll(); // Call F to get data and then fill into variables in data.js
+await fillTop(); // Call F to get data from user/data.js and fill into top component
+await fillTabs(); // Call F to get data from calendar,tags/data.js and fill the tabs in hero component
 
 // --------------------------------------------------------------------------------------------------------------------
 
+// Add event listeners to top,hero component for animation
 document.getElementById("top_bg").addEventListener('click', animateTop);
-
-// attachHeroEventListeners();
 document.getElementById("hero_bg").getElementById("innerCircle").addEventListener('click', animateHero);
 document.getElementById("hero_bg").getElementById("outerCircle").addEventListener('click', animateHero);
 
-// const leftExpand = document.getElementById("leftExpand");
-// if (leftExpand) {
-//     const tags = leftExpand.querySelectorAll(".tag");
-//     for (let i = 0; i < tags.length; i++) {
-//         tags[i].addEventListener("click", addTag);
-//     }
-// }
-
-addTopTagEventListeners();
-addHeroTagEventListeners();
+// Add event listeners to tags in top,hero component for tag changes
+await addTopTagEventListeners();
+await addHeroTagEventListeners();
 
 // --------------------------------------------------------------------------------------------------------------------
 
+// Create date variable to use as main in all calendar+hero functionality
 let day = new Date();
-fillCalendar();
-fillHeading(day);
+
+
+await fillCalendar();
+await fillHeading(day);
+
 
 // --------------------------------------------------------------------------------------------------------------------
 

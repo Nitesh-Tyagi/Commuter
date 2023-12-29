@@ -1,14 +1,19 @@
+import { getCalendarTotal } from '/data.js';
+import { fillHero } from '/hero.js';
+
 const cols = document.querySelectorAll('.col');
 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const months = ["January","February","March","April","May","June","July","September","October","November","December"];
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 function daysInMonth (month, year) { // 2,2023
-    return new Date(year, month, 0).getDate();
+    if(month==1) return 28;
+    if(month>7) return 30 + (month)%2;
+    return 30 + (month+1)%2;
 }
 
 function prevMonth (month, year) {
-    if(month==1) {
-        month = 12;
+    if(month==0) {
+        month = 11;
         year --;
     } 
     else {
@@ -24,21 +29,17 @@ export function digit (n) {
 }
 
 
-
+// F to fill calendar component
 export function fillCalendar () {
     let day = new Date();
     day.setDate(1);
-    // day.setMonth(1);
-   // console.log(day);
-    // console.log(day.getDay());
+
+    // day.month =>  0-11 ... 12=0
 
     const prev = prevMonth(day.getMonth(),day.getFullYear());
 
     let curLength = daysInMonth(day.getMonth(),day.getFullYear());
     let prevLength = daysInMonth(prev[0],prev[1]);
-
-    // console.log(day, curLength);
-    // console.log(prev[0],prev[1], prevLength);
 
     let grid = new Array(7);
     for(let i=0;i<7;i++) grid[i] = new Array(5);
@@ -55,42 +56,30 @@ export function fillCalendar () {
     for(let j=1;j<5;j++){
         for(let i=0;i<7;i++){
             grid[i][j] = digit(dd++);
-            if(dd==curLength) dd=1
+            if(dd==curLength+1) dd=1
         }
     }
-    // console.log(grid);
-    // console.log(day.getDay()-1);
-    // console.log(grid[0][day.getDay()-1]);
-
-    // console.log("COL",cols.length);
-    // Iterate over the "col" elements
     let key = 1;
     for (let i = 0; i < cols.length; i++) {
         const spans = cols[i].querySelectorAll('span');
-        
-        // console.log("SPAN",spans.length);
 
         for (let j = 1; j < spans.length; j++) {
-            // if (j > 0) { // Skip the first two spans (day and old)
+                if(spans[j].classList.contains("dot")) spans[j].classList.remove("dot");
                 if(grid[i][j-1]=='01') key = 1-key;
 
-                // if(key && (j==1 || j==5)){
+                spans[j].textContent = grid[i][j-1];
                 if((j==1 && grid[i][j-1]>10) || ((j==5 && grid[i][j-1]<10))){
                     spans[j].classList.add("old");
                 }
-                spans[j].textContent = grid[i][j-1];
-            // }
+                // get price total [0,1,2] for date [0-31]
+                else if(getCalendarTotal(Number(spans[j].textContent))){
+                    spans[j].classList.add("dot");
+                }
         }
     }
 }
 
 export function fillHeading (day) {
-    // console.log(day);
-    // console.log(day.getDay());
-    // console.log(day.getDate());
-
-    // console.log(months[day.getMonth()-1]);
-    // console.log(day.getFullYear());
 
     let end = "th";
     if(day.getDate()%10 == 1) end = "st";
@@ -101,11 +90,12 @@ export function fillHeading (day) {
     let right = heading.childNodes[3];
     
     left.innerText = weekday[day.getDay()] + " " + day.getDate() + end;
-    right.innerText = months[day.getMonth()-1] + " " + day.getFullYear();
-    // console.log(left.innerText,right.innerText);
+    right.innerText = months[day.getMonth()] + " " + day.getFullYear();
 
     let cur_date = document.getElementById("cur_date");
-    cur_date.innerText = digit(day.getDate()) + " " + months[day.getMonth()-1];  
+    cur_date.innerText = digit(day.getDate()) + " " + months[day.getMonth()]; 
+
+    fillHero(day.getDate());
 }
 
 export function setActive (event, day) {
@@ -120,7 +110,6 @@ export function setActive (event, day) {
         setTimeout( function () {
             event.target.classList.add("active");
             // console.log('Span clicked:', event.target.innerText);
-            // console.log(day);
             fillHeading(day);  
         },100);
     }

@@ -97,6 +97,7 @@ body > * {
     display: inline-block;
 }
 
+
 #top #leftExpand .tag {
     background-image: url(top_tag_default.svg);
     height: 34px;
@@ -392,7 +393,7 @@ body > * {
 #hero .field .price {
     left: 40px;
 }
-#hero .field .number {
+#hero .field .count {
     left: 140px;
 }
 #hero .field .amount {
@@ -416,7 +417,7 @@ body > * {
     text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.1);
 
 }
-#hero #budget {
+#hero #total1 {
     background-color: #F2F2F2;
     height: 30px;
     width: 80px;

@@ -1,3 +1,4 @@
+import { fillTabs } from '/hero.js';
 const topElement = document.getElementById("top");
 const heroElement = document.getElementById("hero");
 const topSVG = document.getElementById("top_bg");
@@ -5,7 +6,7 @@ const heroSVG = document.getElementById("hero_bg");
 const topRight = topElement.getElementsByClassName("right");
 
 export function animateTop (event) {
-    console.log("top");
+    // console.log("top");
     let top1,top2;
     if(topSVG) {
             top1 = topSVG.getElementById("ellipse1");
@@ -70,7 +71,7 @@ export function animateTop (event) {
 };
 
 export function animateHero (event) {
-    console.log("hero");
+    // console.log("hero");
     
     let innerCircle = heroSVG.getElementById("innerCircle");
     let outerCircle = heroSVG.getElementById("outerCircle");
@@ -82,10 +83,11 @@ export function animateHero (event) {
     let tabs = heroElement.querySelector("#tabs");
     let field = tabs.querySelectorAll(".field");
 
-    console.log("tabs :",tabs);
-    console.log("fields :",field);
+    // console.log("tabs :",tabs);
+    // console.log("fields :",field);
     setTimeout( function () {
         if(innerCircle.getAttribute("r")==150){
+            fillTabs();
             innerCircle.style.transition = '1.4s';
             outerCircle.style.transition = '1.4s';
             rightInner.style.transition = '1s';

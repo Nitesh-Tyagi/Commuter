@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Commuter</title>
-    <!-- <link rel="icon" type="image/x-icon" href="logo.png"> -->
     <link rel="icon" type="image/x-icon" href="logo.svg">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -28,38 +27,36 @@
             
         <div class="left">Garveeta</div>
         <div class="right">
-            <span>2805</span> 
+            <span id="total">2805</span> 
             <span id="budget">/ 3400</span>
         </div>
         <div id="leftExpand">
-            <div class="tag1">
-                <!-- 🛺 -->
-                <!-- <div class="tag_logo1">.</div>  -->
+            <!-- <div class="tag1">
                 <input type="text" maxlength="2" placeholder="🛺" class="tag_logo">
                 <div class="tag_price1">₹ </div>
                 <input type="number" pattern="[0-9]*" maxlength="5" placeholder="5000" class="tag_price">
             </div>
             <div class="tag1">
-                <!-- 🛺 -->
-                <!-- <div class="tag_logo1">.</div>  -->
                 <input type="text" maxlength="2" placeholder="" class="tag_logo">
                 <div class="tag_price1">₹ </div>
                 <input type="number" pattern="[0-9]*" maxlength="5" placeholder="XXXX" class="tag_price">
-            </div>
+            </div> -->
+            <div class="tag"></div>
+            <div class="tag"></div>
             <div class="tag"></div>
         </div>
         <div id="expand">
             <div class="field">
                 <div class="label">Username</div>
-                <input type="text" placeholder="Username" class="text">
+                <input type="text" placeholder="Username" value="Username" class="text">
             </div>
             <div class="field">
                 <div class="label">Password</div>
-                <input type="text" placeholder="Password" class="text">
+                <input type="text" placeholder="Password" value="Password" class="text">
             </div>
             <div class="field">
                 <div class="label">Budget</div>
-                <input type="text" placeholder="Budget" class="text">
+                <input type="text" placeholder="Budget" value="Budget" class="text">
             </div>
             <div class="sliderBox">
                 <div id="slider"></div>
@@ -87,37 +84,27 @@
             <div class="field">
                 <div class="logo">🛺</div>
                 <div class="price">₹ 570</div>
-                <div class="number">10</div>
+                <div class="count">10</div>
                 <div class="amount">₹ 57978</div>
             </div>
             <div class="field">
                 <div class="logo">🚕</div>
                 <div class="price">₹ 20</div>
-                <div class="number">0</div>
+                <div class="count">0</div>
                 <div class="amount">₹ 579786</div>
             </div>
             <div class="field">
                 <div class="logo">🚌</div>
                 <div class="price">₹ 5978</div>
-                <div class="number">390</div>
+                <div class="count">390</div>
                 <div class="amount">₹ 579</div>
             </div>
 
-            <!-- <div class="field">
-                <div class="tag_logo">🚕</div>
-                <div class="tag_price1">10</div>
-                <div class="tag_price1">₹ 57978</div>
-            </div>
-            <div class="field">
-                <div class="tag_logo">🚌</div>
-                <div class="tag_price1">10</div>
-                <div class="tag_price1">₹ 57978</div>
-            </div> -->
         </div>
             
         <div class="left">
             <div id="cur_date">15 January</div>
-            <div id="budget">₹ 3700</div>
+            <div id="total1">₹ 3700</div>
         </div>
         <div class="right">
             <div class="tag2">
@@ -126,9 +113,6 @@
                 <input type="number" pattern="[0-9]*" maxlength="5" placeholder="XXX" class="tag_price">
             </div>
             <div class="tag">
-                <!-- <div class="tag_logo1">🛺</div> $$$
-                <div class="tag_logo1">🚕</div> $$$
-                <div class="tag_logo1">🚌</div> $$$ -->
             </div>
             <div class="tag"></div>
         </div>
@@ -174,7 +158,7 @@
                 </div>
                 <div class="col">
                     <span class="day">FRI</span>
-                    <span class="dot">01</span>
+                    <span>01</span>
                     <span>08</span>
                     <span>15</span>
                     <span>22</span>
@@ -201,30 +185,8 @@
 
     </div>
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDuz7dQh-Ah-nmG7BC9rUTh_FiBkERG3uM",
-          authDomain: "commuter-web.firebaseapp.com",
-          projectId: "commuter-web",
-          storageBucket: "commuter-web.appspot.com",
-          messagingSenderId: "38137506695",
-          appId: "1:38137506695:web:873fc517747eab87350122",
-          measurementId: "G-KMCHFE7BCN"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
 	<script type="module" src="index.js"></script>
+    <script type="module" src="data.js"></script>
     <script type="module" src="animations.js"></script>
     <script type="module" src="calendar.js"></script>
     <script type="module" src="top.js"></script>
